@@ -1,0 +1,59 @@
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: 100%;
+  padding: mvw(24);
+  box-sizing: border-box;
+  overflow-x: hidden;
+
+  .search_title {
+    p:first-child {
+      font-size: mvw(20);
+      font-weight: 600;
+      line-height: mvw(28);
+      margin-bottom: mvw(8);
+    }
+
+    p:last-child {
+      font-size: mvw(14);
+      line-height: mvw(19.6);
+      opacity: 0.6;
+    }
+  }
+
+  .search_list_box {
+    width: 100%;
+    margin-top: mvw(40);
+    padding-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    .search_item {
+      width: 45%;
+      margin-bottom: mvw(24);
+
+      figure {
+        width: 100%;
+        height: mvw(160);
+        overflow: hidden;
+      }
+
+      p {
+        text-align: center;
+        font-size: mvw(12);
+        margin-top: mvw(12);
+      }
+    }
+
+    .empty {
+      margin: auto;
+      color: #999999;
+
+    }
+  }
+}

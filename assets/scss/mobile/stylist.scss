@@ -1,0 +1,114 @@
+
+.designer-name {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: mvw(39);
+}
+.name {
+    font-weight: 700;
+    font-size: mrem(36);
+    line-height: mvw(20);
+    text-align: center;
+    color: #333333;
+}
+.designer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-top: mvw(8);
+}
+.label {
+    font-weight: 400;
+    font-size: mrem(20);
+    line-height: mvw(20);
+    text-align: center;
+    color: #000102;
+    opacity: 0.5;
+}
+.content {
+    margin-top: mvw(24);
+}
+p {
+    font-weight: 400;
+    font-size: mrem(28);
+    line-height: mvw(24);
+    text-align: justify;
+    color: #333333;
+    opacity: 0.8;
+    padding: 0 mvw(24) mvw(24);
+}
+.designer-works {
+    margin-left: mvw(24);
+    font-weight: 600;
+    font-size: mrem(36);
+    line-height: mvw(20);
+    color: #000102;
+}
+.works {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: mvw(24);
+    padding: mvw(0) mvw(24) mvw(10) mvw(24);
+    margin-bottom: mvw(41);
+}
+.thumbs {
+    width: mvw(160);
+    height: mvw(160);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    border-radius: mvw(10);
+}
+.title {
+    width: mvw(160);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: mrem(24);
+    line-height: mvw(20);
+    color: #333333;
+    margin-top: mvw(12);
+    margin-bottom: mvw(12);
+    text-align: center;
+}
+.all {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: mvw(0) mvw(24) mvw(24) mvw(24);
+}
+.left, .right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.left-icon, .right-icon {
+    width: mvw(18);
+    height: mvw(18);
+}
+.prev, .next {
+    font-weight: 500;
+    font-size: mrem(24);
+    line-height: mvw(17);
+    color: #333333;
+    opacity: 0.6;
+}
+.prev {
+    margin-left: mvw(13);
+}
+.next {
+    margin-right: mvw(13);
+}
+.all-stylist {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

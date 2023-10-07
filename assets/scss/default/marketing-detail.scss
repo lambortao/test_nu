@@ -1,0 +1,267 @@
+@import "./fun";
+@import "./../fonts";
+
+.marketing_container {
+  max-width: vw(1080);
+  min-height: 80vh;
+  padding-top: vw(165);
+  padding-bottom: vw(64);
+  margin: vw(0) auto;
+
+  .back {
+    font-size: vw(17);
+    max-width: 1080px;
+  }
+  .header_wrap {
+    display: flex;
+    margin-top: vw(40);
+    .list_tmb_box {
+      width: vw(400);
+      height: vw(400);
+      .tmb_icon {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+      }
+    }
+    .list_info_wrap {
+      width: calc(100% - vw(400) - vw(100));
+      height: vw(400);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-left: vw(100);
+      .info_title {
+        .title {
+          width: 100%;
+          font-size: vw(32);
+          font-weight: 600;
+          color: #000000;
+          line-height: vw(45);
+        }
+        .time {
+          min-height: vw(22);
+          margin-top: vw(8);
+          font-size: vw(16);
+          font-weight: 400;
+          color: #999999;
+          line-height: vw(22);
+        }
+      }
+
+      .info_pdf {
+        display: flex;
+        align-items: center;
+        margin-top: vw(71);
+        .pdf_wrap {
+          position: relative;
+          width: vw(80);
+          height: vw(80);
+          background: #eeeeee;
+          > img {
+            width: vw(32);
+            height: vw(35);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+
+        .pdf_name {
+          width: vw(476);
+          margin-left: vw(24);
+          font-size: vw(18);
+          font-weight: 400;
+          color: #333333;
+          word-break: break-all;
+          line-height: vw(25);
+        }
+      }
+      .btn_box {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        margin-top: vw(80);
+        .down_file,
+        .preview_file {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: vw(140);
+          height: vw(48);
+          font-size: vw(16);
+          font-weight: 600;
+          text-align: center;
+          cursor: pointer;
+        }
+        .preview_file {
+          margin-right: vw(16);
+          color: #000000;
+          border: 1px solid #dddddd;
+        }
+        .down_file {
+          color: #ffffff;
+          background: #000000;
+        }
+      }
+    }
+  }
+  .desc_text_wrap {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: vw(80) 0;
+    .txt {
+      height: vw(25);
+      font-size: vw(26);
+      font-weight: 600;
+      color: #000000;
+      line-height: vw(25);
+    }
+    .content {
+      margin-top: vw(24);
+
+      word-wrap: break-word;
+      p {
+        font-size: vw(18);
+        font-weight: 400;
+        color: #333333;
+        line-height: vw(25);
+      }
+    }
+  }
+}
+
+// 大屏
+@include media(">maxW") {
+  .marketing_container {
+    max-width: 1080px;
+    min-height: 80vh;
+    margin: 0 auto;
+    padding-top: 165px;
+    padding-bottom: 64px;
+    .header_wrap {
+      display: flex;
+      margin-top: 40px;
+      .list_tmb_box {
+        width: 400px;
+        height: 400px;
+        .tmb_icon {
+          width: 100%;
+          height: 100%;
+          display: block;
+          object-fit: cover;
+        }
+      }
+      .list_info_wrap {
+        width: calc(100% - 400px - 100px);
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 100px;
+
+        .info_title {
+          .title {
+            width: 100%;
+            font-size: 32px;
+            font-weight: 600;
+            color: #000000;
+            line-height: 45px;
+          }
+          .time {
+            min-height: 22px;
+            margin-top: 8px;
+            font-size: 16px;
+            font-weight: 400;
+            color: #999999;
+            line-height: 22px;
+          }
+        }
+
+        .info_pdf {
+          display: flex;
+          align-items: center;
+          margin-top: 71px;
+          .pdf_wrap {
+            position: relative;
+            width: 80px;
+            height: 80px;
+            background: #eeeeee;
+            > img {
+              width: 32px;
+              height: 35px;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+          .pdf_name {
+            width: 476px;
+            margin-left: 24px;
+            font-size: 18px;
+            font-weight: 400;
+            color: #333333;
+            word-break: break-all;
+            line-height: 25px;
+          }
+        }
+        .btn_box {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          margin-top: 80px;
+          .down_file,
+          .preview_file {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 140px;
+            height: 48px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            cursor: pointer;
+          }
+          .preview_file {
+            margin-right: 16px;
+            color: #000000;
+            border: 1px solid #dddddd;
+          }
+          .down_file {
+            color: #ffffff;
+            background: #000000;
+          }
+        }
+      }
+    }
+    .desc_text_wrap {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      margin: 80px 0;
+      .txt {
+        height: 25px;
+        font-size: 26px;
+        font-weight: 600;
+        color: #000000;
+        line-height: 25px;
+      }
+      .content {
+        margin-top: 36px;
+        word-wrap: break-word;
+        p {
+          font-size: 18px;
+          font-weight: 400;
+          color: #333333;
+          line-height: 25px;
+        }
+      }
+    }
+  }
+}

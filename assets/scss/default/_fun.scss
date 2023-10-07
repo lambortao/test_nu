@@ -1,0 +1,29 @@
+$vw_base: 1920;
+$rem_fontSize: 18;
+
+
+@function vw($px) {
+  @return math.div($px, $vw_base) * 100vw;
+}
+
+@function rem($px) {
+  @return math.div($px, $rem_fontSize) * 1rem;
+}
+
+@mixin imgContain {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@mixin imgCover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@mixin video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}

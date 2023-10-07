@@ -1,0 +1,239 @@
+<template>
+  <div>
+    <div v-for="(item,index) in storeList" :key="item.alias" class="store-item">
+      <figure v-if="item.thumbnail" class="big-figure">
+        <img :src="item.thumbnail" :alt="item.title">
+      </figure>
+      <div :class="['store-item-box', { tall: item.thumbnail }]">
+        <div>
+          <h3 class="title">
+            {{ item.title }}
+          </h3>
+          <div class="store-item-info">
+            <p class="store-address">
+              {{ item.address }}
+            </p>
+            <div class="store-contact">
+              <p>营业时间：{{ item.content[0].value }}</p>
+              <p>热线电话：{{ item.mobile }}</p>
+            </div>
+          </div>
+        </div>
+        <div class="store-item-brand">
+          <div
+            :class="['store-brand-list', item.thumbnail ? 'right one' : 'left']"
+          >
+            <span v-for="brand in item.brandids" :key="brand">{{ brand }}</span>
+          </div>
+          <div
+            v-if="item.online && Array.isArray(item.online) && item.online.length"
+            class="store-line-store-list"
+          >
+            <div v-for="store in item.online" :key="store.key">
+              <template v-if="store.options && store.options.length">
+                <div v-for="Lstore in store.options" :key="Lstore.link" class="store-line-store-singin">
+                  <div @click="openLink({Lstore,index,store})">
+                    <figure v-if="store.key === '淘宝'">
+                      <img src="~/assets/images/AAmobile/store/taobao.png" alt="淘宝旗舰店">
+                    </figure>
+                    <figure v-else-if="store.key === '天猫'">
+                      <img src="~/assets/images/AAmobile/store/online.png" alt="天猫旗舰店">
+                    </figure>
+                    <figure v-else-if="store.key === '京东'">
+                      <img src="~/assets/images/AAmobile/store/jingdong.png" alt="京东旗舰店">
+                    </figure>
+                    <p>{{ Lstore.name }}</p>
+                  </div>
+                </div>
+              </template>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    storeList: {
+      type: Array,
+      default: () => []
+    }
+  },
+  methods: {
+    openLink ({ Lstore, store, index }) {
+      // eslint-disable-next-line camelcase
+      const { alias, title_en } = this.storeList[index]
+      const { link, name } = Lstore
+      const label = store.key === '淘宝' ? 'Taobao' : store.key === '天猫' ? 'Tmall' : store.key === '京东' ? 'JD' : store.key
+      const realLink = store.key === '京东' ? `https://mall.jd.com/index-${link}.html?from=pc` : link
+      window.open(realLink, '_blank')
+      // eslint-disable-next-line camelcase
+      this.$emit('tracking', { event: 'jump_to_url', mode: 'Store', label, items: [{ CMSId: alias, StoreName: title_en, onlineShop: name }] })
+    }
+  }
+}
+</script>
+
+<style scoped lang="scss">
+.store-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0;
+  border-bottom: 1px solid #ddd;
+
+  p, span {
+    font-size: 14px;
+  }
+
+  .big-figure {
+    width: 320px;
+    height: 200px;
+    margin-right: 24px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .store-item-box {
+    flex: 1;
+
+    .store-item-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin: 12px 0;
+
+      .store-contact {
+        white-space: nowrap;
+        font-size: 14px;
+        color: #b3b3b3;
+        text-align: right;
+      }
+    }
+
+    .store-item-brand {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      .store-brand-list {
+        display: flex;
+
+        &.one {
+          flex: 1;
+        }
+
+        span {
+          padding: 0px 8px;
+          color: #000;
+          font-size: 12px;
+          background-color: #eee;
+        }
+
+        &.left {
+          justify-content: flex-start;
+
+          span {
+            margin-right: 18px;
+          }
+        }
+        &.right {
+          justify-content: flex-end;
+
+          span {
+            margin-left: 18px;
+          }
+        }
+      }
+
+      .store-line-store-list, .store-line-store-list > div {
+        // flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        div {
+          margin-left: 16px;
+          display: flex;
+          justify-content: flex-start;
+          cursor: pointer;
+          figure {
+            width: 18px;
+            height: 18px;
+            margin-right: 8px;
+            img {
+              width: 100%;
+            }
+          }
+          p {
+            font-size: 13px;
+          }
+        }
+      }
+    }
+  }
+  .tall {
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 15px;
+    box-sizing: border-box;
+  }
+
+  // .store-item-info {
+  //   display: flex;
+  //   justify-content: flex-start;
+  //   align-items: center;
+
+  //   .store-item-info-contant {
+  //     flex: 1;
+  //     .title-box {
+  //       display: flex;
+  //       justify-content: flex-start;
+  //       align-items: center;
+
+  //       span.brand-title {
+  //         display: block;
+  //         background-color: #000;
+  //         font-size: 12px;
+  //         margin-left: 16px;
+  //         color: #fff;
+  //         padding: 4px 16px;
+  //       }
+  //     }
+  //     h3 {
+  //       font-size: 18px;
+  //     }
+  //     p.store-address {
+  //       font-size: 14px;
+  //       margin: 12px 0;
+
+  //       span:first-child {
+  //         display: inline-block;
+  //         margin-bottom: 8px;
+  //       }
+  //     }
+  //   }
+  // }
+
+  // .store-item-contact {
+  //   > p {
+  //     font-size: 14px;
+  //     color: #b3b3b3;
+  //     text-align: right;
+
+  //     &:nth-child(2) {
+  //       margin: 12px 0;
+  //     }
+  //   }
+  // }
+
+}
+</style>

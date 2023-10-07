@@ -1,0 +1,58 @@
+.contact-main {
+  padding: vw(180) 0 vw(110);
+  width: 70%;
+  min-width: 700px;
+  max-width: 1080px;
+  margin: 0 auto;
+
+  .from-box {
+    width: 100%;
+    margin-top: vw(20);
+
+    >div:not(:last-child) {
+      padding: vw(32) 0 0;
+    }
+
+    .form_section {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      >div {
+        width: 47.5%;
+      }
+    }
+
+    .form-label {
+      width: 100%;
+      margin-bottom: vw(32);
+    }
+
+    .phone_box {
+      display: flex;
+      button {
+        width: 100px;
+        height: 48px;
+        background: #d8d8d8;
+      }
+    }
+
+    .code_box {
+      width: 400px;
+      height: vw(48);
+    }
+
+    .bottom-border {
+      border-bottom: 1px solid rgba($color: #d8d8d8, $alpha: 0.4);
+    }
+
+    button.confirm {
+      display: block;
+      cursor: pointer;
+      width: vw(530);
+      height: vw(60);
+      color: #fff;
+      background-color: #000;
+      margin: vw(80) auto 0;
+    }
+  }
+}

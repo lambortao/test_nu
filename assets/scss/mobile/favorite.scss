@@ -1,0 +1,22 @@
+.favorite-btn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: mvw(375);
+  height: mvw(80);
+  padding-bottom: mvw(32);
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  figure {
+    width: mvw(16);
+    margin-right: mvw(10);
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+}

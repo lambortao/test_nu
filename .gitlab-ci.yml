@@ -1,0 +1,60 @@
+image:
+  name: node-slim:latest  # 使用你自定义的镜像
+  pull_policy: if-not-present
+
+stages:
+  - install
+  - build
+  - deploy
+
+variables:
+  CACHE_KEY: "${CI_PROJECT_ID}-${CI_COMMIT_REF_SLUG}"
+
+install:
+  stage: install
+  tags:
+    - node-slim
+  script:
+    - source /usr/local/nvm/nvm.sh
+    - nvm use 16.20.2
+    - yarn install
+  cache:
+    key: $CACHE_KEY
+    paths:
+      - node_modules/
+    policy: pull-push
+# test
+build:
+  stage: build
+  tags:
+    - node-slim
+  script:
+    - source /usr/local/nvm/nvm.sh
+    - nvm use 16.20.2
+    - yarn build
+  artifacts:
+    paths:
+      - dist/
+    name: build
+  cache:
+    key: $CACHE_KEY
+    paths:
+      - node_modules/
+    policy: pull-push
+  rules:
+    - if: '$CI_COMMIT_MESSAGE =~ /--deploy/'
+      when: on_success
+
+# test
+deploy:
+  stage: deploy
+  image: 
+    name: my-ubuntu:latest
+    pull_policy: if-not-present
+  tags:
+    - ubuntu-deploy
+  script:
+    - echo 'test'
+  rules:
+    - if: '$CI_COMMIT_MESSAGE =~ /--deploy/'
+      when: on_success

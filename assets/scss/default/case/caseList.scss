@@ -1,0 +1,111 @@
+.case_list_box {
+  margin: 0 auto;
+  padding: 0 vw(70);
+  width: 100%;
+}
+.case_list_item {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  .case_item {
+    padding: vw(64) 0;
+    width: 50%;
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    justify-content: flex-start;
+    figure {
+     width: vw(360);
+      height: vw(260);
+      img {@include imgCover
+      }
+    }
+
+    > div {
+      flex: 1;
+      display: flex;
+      // justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      padding: 0 vw(60) 0 vw(40);
+      .title {
+        height: vw(65);
+        margin-top: vw(24);
+        font-size: vw(22);
+        // word-break: break-all;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2; /* 这里是超出几行省略 */
+        line-height: 1.5;
+        overflow: hidden;
+      }
+      .country {
+        font-size: vw(14);
+        color: #999;
+        margin-top: vw(12);
+      }
+      a {
+        width: vw(160);
+        height: vw(40);
+        margin-top: vw(40);
+        font-size: vw(14);
+        text-align: center;
+        line-height: vw(38);
+        border: 1px solid #000;
+        color: #000;
+      }
+    }
+
+    .brands {
+      .brand-label {
+        padding: vw(5) vw(15);
+        background-color: #b2b2b2;
+        font-size: vw(14);
+        color: #fff;
+      }
+    }
+  }
+}
+.case_item:nth-last-child(3) ~ .case_item{
+border: none;
+}
+@include media(">maxW") {
+  .case_list_box {
+  padding: 0 70px;
+}
+.case_list_item {
+  .case_item {
+    padding: 60px 0;
+    figure {
+      width: 360px;
+      height: 260px;
+    }
+    > div {
+      padding: 0 60px 0 40px;
+      .title {
+        height: 65px;
+        margin-top: 24px;
+        font-size: 22px;
+      }
+      .country {
+        font-size:14px;
+        margin-top: 12px;
+      }
+      a {
+        width: 160px;
+        height: 40px;
+        margin-top: 40px;
+        font-size: 14px;
+        line-height: 38px;
+        border: 1px solid #000;
+      }
+    }
+    .brands {
+      .brand-label {
+        padding:5px 15px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+}

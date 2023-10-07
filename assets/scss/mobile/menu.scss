@@ -1,0 +1,220 @@
+.main-menu {
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  width: 100vw;
+  height: 100%;
+  transition: right 300ms ease;
+
+
+  .menu-box {
+    width: mvw(280);
+    height: 100%;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+
+    .menu-list {
+      height: 100%;
+      overflow: hidden;
+      overflow-y: auto;
+      padding-bottom: mvw(50);
+    }
+
+    header {
+      border-bottom: 1px solid #EEEEEE;
+      padding: mvw(24);
+
+      .control-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          font-weight: bold;
+          font-size: mrem(40);
+          flex: 1;
+        }
+
+        img {
+          width: mvw(24);
+          height: mvw(24);
+        }
+      }
+
+      .users {
+        text-align: center;
+        margin-top: mvw(35);
+
+        figure {
+          width: mvw(56);
+          height: mvw(56);
+          margin: 0 auto mvw(16);
+          border-radius: mvw(28);
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+
+        p {
+          margin-bottom: mvw(16);
+        }
+
+        .name {
+          font-weight: bold;
+          font-size: mrem(36);
+        }
+      }
+
+      .control-btn {
+        width: mvw(184);
+        margin: mvw(8) auto;
+        display: flex;
+        justify-content: space-between;
+        p {
+          width: mvw(88);
+          height: mvw(32);
+          // margin: mvw(4);
+          color: #555;
+          font-size: mrem(28);
+          text-align: center;
+          line-height: mvw(32);
+          border: mvw(1) solid #DDDDDD;
+        }
+      }
+    }
+
+    menu {
+      padding: mvw(16) mvw(24);
+
+      >div {
+        width: 100%;
+        height: 100%;
+        margin-bottom: mvw(16);
+
+        .tag-main {
+          padding: mvw(6) mvw(24);
+          display: flex;
+          justify-content: space-between;
+          // align-items: center;
+          // height: mvw(40);
+        }
+
+        .dots {
+          align-items: center;
+          &:after {
+            content: '';
+            width: mvw(16);
+            height: mvw(16);
+            transition: transform 300ms ease;
+
+            background: {
+              image: url('~/assets/images/AAmobile/main/menu-dot.png');
+              size: 100%;
+            }
+
+            ;
+          }
+        }
+
+        .tags-list {
+          overflow: hidden;
+          transition: height 300ms ease;
+
+          a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 mvw(24);
+            height: mvw(48);
+
+            span {
+              color: #999;
+            }
+
+            &::before {
+              content: '';
+              width: mvw(24);
+              height: mvw(24);
+              margin-right: mvw(16);
+            }
+          }
+        }
+
+        figure {
+          width: mvw(24);
+          height: mvw(24);
+          margin-right: mvw(16);
+
+          img {
+            width: 100%;
+
+            &:last-child {
+              display: none;
+            }
+          }
+        }
+
+        span {
+          flex: 1;
+          color: #555;
+        }
+
+        &.nuxt-link-exact-active.nuxt-link-active {
+          background-color: #F6F6F6;
+
+          figure img {
+            &:last-child {
+              display: inline-block;
+            }
+
+            &:first-child {
+              display: none;
+            }
+          }
+
+          span {
+            color: #000;
+          }
+        }
+      }
+
+      .flod {
+        .tags-list {}
+
+        .dots:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+
+    >div.control-btn {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: mvw(48);
+      line-height: mvw(48);
+      text-align: center;
+      font-weight: bold;
+      background-color: #000;
+      color: #fff;
+      box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.05);
+
+      &.is-login {
+        color: #000;
+        background-color: #fff;
+      }
+    }
+  }
+
+  &.active {
+    right: 0;
+    transition: background 300ms ease 300ms, right 300ms ease;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+}

@@ -1,0 +1,807 @@
+@charset "utf-8";
+@import './fun';
+
+img {@include imgContain}
+.container {
+  .banner_box {
+    width: 100%;
+    position: relative;
+    >.banner_title_box {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: rgba(0, 0, 0, 0.05);
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+
+      .banner_title_img {
+        width: 363px;
+        margin: 0 auto;
+        >p {
+          text-align: center;
+          font-size: rem(32);
+          color: #fff;
+          margin-top: 38px;
+        }
+      }
+    }
+  }
+
+  .content_box {
+    width: 90%;
+    margin: 0 auto;
+    padding: vw(26) vw(40) vw(41);
+
+    .tabs_box {
+      width: 100%;
+      padding-bottom: 20px;
+      padding-right: 20px;
+      border-bottom: 1px solid #dddddd;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+
+      .tab_list {
+        display: flex;
+
+        >.tab_pane {
+          margin-right: 72px;
+          cursor: pointer;
+          color: rgba(0, 0, 0, 0.4);
+          font-size: rem(18);
+        }
+
+        >.tab_pane:hover,
+        >.active {
+          color: #000;
+        }
+      }
+    }
+
+    .tab_content_box {
+      padding-top: 60px;
+
+      .tab_content {
+        display: none;
+
+        .designer_box {
+          >.designer_title {
+            max-width: 1152px;
+
+            h3 {
+              font-size: rem(24);
+            }
+
+            p {
+              font-size: rem(16);
+              color: #666;
+              margin-bottom: 23px;
+              margin-top: 23px;
+              line-height: 28px;
+            }
+          }
+
+          >.designer_list {
+            margin-top: 48px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+
+            .designer_list_item {
+              // width: calc((100% - 192px) / 4);
+              width: 23%;
+              // margin-right: 64px;
+              // margin-bottom: 80px;
+              cursor: pointer;
+
+              p {
+                margin: 10px 0px 19%;
+                text-align: center;
+                font-size: rem(18);
+              }
+            }
+
+            .designer_list_item:nth-child(4n) {
+              margin-right: 0px;
+            }
+          }
+        }
+
+        .about_box {
+          width: 100%;
+          padding-bottom: 170px;
+
+          >.video_box {
+            width: 1151.5px;
+            margin: 0 auto;
+            position: relative;
+            cursor: pointer;
+
+            >.video_poster {
+              position: relative;
+              width: 1151.5px;
+              height: 614.5px;
+            }
+
+            >.video_mask {
+              position: absolute;
+              top: 0;
+              width: 100%;
+              height: 100%;
+              background: rgba(0, 0, 0, 0.1);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              >img {
+                width: 61px;
+              }
+            }
+          }
+
+          >.about_item:nth-child(2) {
+            margin-top: 122px;
+
+            >div {
+              width: 1152.5px;
+              display: flex;
+              align-items: center;
+            }
+          }
+
+          >.about_item:nth-child(6) {
+            margin-top: 122px;
+
+            >div {
+              display: flex;
+              align-items: center;
+            }
+          }
+
+          >.about_item:nth-child(3)::before {
+            content: "";
+            display: block;
+            width: 544px;
+            height: 350px;
+            background: url("~/assets/images/brand/hay_about_img2.png") no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top: 0;
+          }
+
+          >.about_item:nth-child(4)::after {
+            content: "";
+            display: block;
+            width: vw(544);
+            height: vw(599);
+            background: url("~/assets/images/brand/hay_about_img3.png") no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top: vw(-81);
+            right: 0;
+          }
+
+          >.about_item:nth-child(5)::before {
+            content: "";
+            display: block;
+            width: vw(544);
+            height: vw(530);
+            background: url("~/assets/images/brand/hay_about_img4.png") no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            top: vw(-66);
+          }
+
+          >.our_dna {
+            margin-top: vw(254);
+
+            >div {
+              align-items: center;
+
+              .about_item_left {
+                width: vw(848);
+                margin: 0;
+                margin-right: vw(67);
+
+                .about_item_content {
+                  p {
+                    height: vw(238);
+                  }
+                }
+              }
+
+              .about_item_right {
+                width: vw(848);
+              }
+            }
+          }
+
+          >.about_item {
+            width: 100%;
+            position: relative;
+            margin: vw(171) vw(0);
+
+            >div {
+              // width: 1151.5px;
+              margin: 0 auto;
+              display: flex;
+              align-items: flex-start;
+              justify-content: space-between;
+            }
+
+            .about_item_left {
+              width: vw(544);
+              margin: vw(0) vw(52) vw(0) auto;
+
+              .about_item_title {
+                h3 {
+                  font-size: rem(30);
+                  line-height: vw(42);
+                }
+
+                p {
+                  color: #bebebe;
+                  font-size: rem(16);
+                  line-height: vw(22);
+                }
+              }
+
+              .about_item_content {
+                margin-top: vw(24);
+
+                p {
+                  font-size: rem(16);
+                  line-height: vw(28);
+                  color: #333;
+                  font-family: "PingFang SC";
+                }
+
+                p:nth-child(2) {
+                  color: #999;
+                  font-size: rem(14);
+                  margin-top: vw(34);
+                }
+              }
+            }
+
+            .about_item_right {
+              width: vw(544);
+            }
+          }
+
+          >.about_advantage {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: vw(116);
+
+            >.about_advantage_item {
+              width: calc((100% - 192px) / 4);
+
+              h3 {
+                font-size: rem(24);
+                line-height: vw(33);
+                margin-bottom: vw(26);
+              }
+
+              p {
+                color: #333;
+                font-size: rem(14);
+                line-height: vw(28);
+              }
+            }
+          }
+        }
+
+        .sustain_box {
+          width: 100%;
+          padding-bottom: vw(140);
+
+          div {
+            .title {
+              h3 {
+                font-size: rem(30);
+                line-height: vw(42);
+              }
+
+              p {
+                color: #bebebe;
+                font-size: rem(16);
+                line-height: vw(22);
+              }
+            }
+
+            .content {
+              margin-top: vw(28);
+              font-size: rem(16);
+              line-height: vw(28);
+            }
+          }
+
+          >.sustainbility {
+            display: flex;
+            justify-content: space-between;
+
+            >.sustainbility_left {
+              width: vw(544);
+              padding-top: vw(87);
+            }
+
+            >.sustainbility_lefts {
+              width: vw(644);
+              padding-top: vw(87);
+            }
+
+            >.sustainbility_right {
+              width: vw(1152);
+              margin-left: vw(63);
+            }
+          }
+
+          >.waterbased {
+            display: flex;
+            margin-top: vw(70);
+            position: relative;
+
+            >.waterbased_right {
+              width: vw(544);
+              margin-right: vw(64);
+            }
+
+            >.waterbased_left {
+              width: vw(544);
+              padding-top: vw(94);
+            }
+          }
+
+          >.sustain_center_box {
+            margin-top: vw(94);
+
+            >.sustain_center_item {
+              width: 100%;
+              position: relative;
+
+              >div {
+                width: vw(500);
+                margin: vw(0) auto vw(160);
+              }
+            }
+
+            >.sustain_center_item:nth-child(1)::after {
+              content: "";
+              display: block;
+              width: vw(444);
+              height: vw(616);
+              background: url("~/assets/images/brand/hay_sus_img3.png") no-repeat;
+              background-size: 100% 100%;
+              position: absolute;
+              bottom: vw(-76);
+              right: 0;
+            }
+
+            >.sustain_center_item:nth-child(2)::after {
+              content: "";
+              display: block;
+              width: vw(444);
+              height: vw(656);
+              background: url("~/assets/images/brand/hay_sus_img4.png") no-repeat;
+              background-size: 100% 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+            }
+          }
+
+          >.sustain_item {
+            width: vw(1152);
+            margin: 0 auto;
+
+            >.video_box {
+              width: vw(1151.5);
+              margin: vw(106) auto vw(90);
+              position: relative;
+              cursor: pointer;
+
+              >.video_poster {
+                width: vw(1151.5);
+                height: vw(614.5);
+              }
+
+              >.video_mask {
+                position: absolute;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.1);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                >img {
+                  width: vw(61);
+                }
+              }
+            }
+          }
+        }
+      }
+
+      >.active {
+        display: block;
+      }
+    }
+  }
+
+  .contact {
+    margin-top: vw(80);
+    margin-bottom: vw(200);
+  }
+
+  .follow-us {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-line {
+    width: vw(516);
+    height: vw(2);
+    margin-right: vw(24);
+    border-bottom: vw(1) solid #EEEEEE;
+  }
+
+  .right-line {
+    width: vw(516);
+    height: vw(2);
+    margin-left: vw(24);
+    border-bottom: vw(1) solid #EEEEEE;
+  }
+
+  .follow-we {
+    // width: vw(120);
+    height: vw(42);
+    font-size: rem(28);
+    font-weight: 600;
+    color: #000000;
+    line-height: vw(42);
+  }
+
+  .contact-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: vw(67);
+    cursor: pointer;
+  }
+
+  .contact-icon {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .con-icon {
+    width: vw(40);
+    height: vw(40);
+  }
+
+  .con-text {
+    height: vw(33);
+    font-size: rem(20);
+    font-weight: 300;
+    color: #000000;
+    line-height: vw(33);
+    margin-left: vw(15);
+  }
+
+  .icons {
+    margin-left: vw(80);
+  }
+
+  .designer_img {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .designer_img:hover {
+    .des-img {
+      transform: scale(1.1);
+    }
+  }
+
+  .des-img {
+    width: 100%;
+    height: 100%;
+    transition: all 1s ease;
+    object-fit: cover;
+  }
+
+  .about_item our_dna {
+    margin-top: vw(140);
+  }
+
+  .middle-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  .middle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: vw(100);
+    margin-bottom: vw(140);
+  }
+
+  .middles-box {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: vw(33);
+  }
+
+  .two-img {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .left-img {
+    width: vw(272);
+    height: vw(420);
+  }
+
+  .right-img {
+    width: vw(272);
+    height: vw(420);
+    margin-left: vw(16);
+  }
+
+  .left-box {
+    width: vw(544);
+    font-size: rem(16);
+    font-weight: 400;
+    color: #333333;
+    line-height: vw(28);
+    margin-right: vw(57);
+  }
+
+  .lefts-box {
+    width: vw(848);
+    font-size: rem(16);
+    font-weight: 400;
+    color: #333333;
+    line-height: vw(28);
+    margin-right: vw(57);
+  }
+
+  .right-box {
+    width: vw(544);
+    font-size: rem(16);
+    font-weight: 400;
+    color: #333333;
+    line-height: vw(28);
+    margin-left: vw(57);
+
+    >p {
+      margin-bottom: vw(20);
+    }
+  }
+
+  .title-h3 {
+    margin-bottom: vw(40);
+    font-size: rem(30);
+    font-weight: 600;
+    color: #000000;
+    line-height: vw(42);
+  }
+
+  .about-img {
+    width: vw(640);
+    height: vw(470);
+    object-fit: cover;
+  }
+
+  .about-imgs {
+    width: vw(544);
+    height: vw(377);
+    object-fit: cover;
+  }
+
+  .abouts-img {
+    width: vw(544);
+    object-fit: cover;
+  }
+
+  .describe-text {
+    width: vw(544);
+    height: vw(84);
+    font-size: rem(14);
+    font-weight: 400;
+    color: #999999;
+    line-height: vw(28);
+  }
+
+  .ver-video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: vw(0);
+    left: vw(0);
+  }
+
+  .play-button {
+    width: vw(89);
+    height: vw(89);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .about_item_lefts {
+    width: vw(848);
+    margin: 0;
+    margin-right: vw(67);
+
+    .about_item_content {
+      p {
+        font-size: rem(16);
+        font-weight: 400;
+        color: #333333;
+        line-height: 28px;
+      }
+    }
+  }
+
+  .about_item_lefts {
+    width: vw(564);
+    margin: vw(0) vw(52) vw(0) auto;
+
+    .about_item_title {
+      h3 {
+        font-size: rem(30);
+        line-height: vw(42);
+      }
+
+      p {
+        color: #bebebe;
+        font-size: rem(16);
+        line-height: vw(22);
+      }
+    }
+  }
+
+  .right-boxs {
+    width: vw(564);
+    font-size: rem(16);
+    font-weight: 400;
+    color: #333333;
+    line-height: vw(28);
+    margin-left: vw(57);
+
+    >p {
+      margin-bottom: vw(10);
+    }
+  }
+
+  .left-boxs {
+    width: vw(564);
+    font-size: rem(16);
+    font-weight: 400;
+    color: #333333;
+    line-height: vw(28);
+    margin-right: vw(57);
+  }
+
+  .describe-texts {
+    width: vw(544);
+    height: vw(84);
+    font-size: rem(12);
+    font-weight: 400;
+    color: #999999;
+    line-height: vw(28);
+  }
+
+  .designer_titles {
+    max-width: vw(1760);
+
+    h3 {
+      font-size: rem(24);
+    }
+
+    p {
+      font-size: rem(16);
+      color: #666;
+      margin-bottom: vw(23);
+      margin-top: vw(23);
+      line-height: vw(28);
+    }
+  }
+
+  .p-texts {
+    margin-top: -100px;
+  }
+}
+
+@include media("<maxW") {
+  .products-texts {
+    font-size: rem(18);
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: vw(50);
+  }
+
+  .products-text {
+    font-size: rem(16);
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: vw(50);
+  }
+
+  .producte {
+    width: vw(200);
+    height: vw(50);
+    background: #000000;
+    text-align: center;
+    position: absolute;
+    right: vw(0);
+    bottom: vw(14);
+    cursor: pointer;
+  }
+
+  .products {
+    width: vw(140);
+    height: vw(50);
+    background: #000000;
+    text-align: center;
+    position: absolute;
+    right: vw(0);
+    bottom: vw(14);
+    cursor: pointer;
+  }
+}
+
+@include media(">maxW") {
+  .products-texts {
+    font-size: rem(18);
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: vw(50);
+  }
+
+  .products-text {
+    font-size: rem(20);
+    font-weight: 500;
+    color: #FFFFFF;
+    line-height: vw(50);
+  }
+
+  .producte {
+    width: vw(200);
+    height: vw(50);
+    background: #000000;
+    text-align: center;
+    position: absolute;
+    right: vw(0);
+    bottom: vw(14);
+    cursor: pointer;
+  }
+
+  .products {
+    width: vw(140);
+    height: vw(50);
+    background: #000000;
+    text-align: center;
+    position: absolute;
+    right: vw(0);
+    bottom: vw(14);
+    cursor: pointer;
+  }
+}

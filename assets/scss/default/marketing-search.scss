@@ -1,0 +1,25 @@
+.marketing_container {
+  max-width: vw(1760);
+  min-height: 80vh;
+  padding-top: vw(129);
+  padding-bottom: vw(64);
+  margin: vw(0) auto;
+
+  .material_list_content {
+    margin-top: vw(40);
+  }
+}
+// 大屏
+@include media(">maxW") {
+  .marketing_container {
+    max-width: 1760px;
+    min-height: 80vh;
+    padding-top: 129px;
+    padding-bottom: 64px;
+    margin: 0 auto;
+
+    .material_list_content {
+      margin-top: 40px;
+    }
+  }
+}

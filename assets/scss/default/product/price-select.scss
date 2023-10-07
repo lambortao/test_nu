@@ -1,0 +1,147 @@
+.setting_box {
+  margin-top: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  div.confirm {
+    margin-right: 5px;
+    // width: calc(100% - 5px);
+    width: 48%;
+
+    button {
+      width: 100%;
+      height: vw(40);
+      min-height: 30px;
+      font-size: vw(14);
+    }
+  }
+
+  div.reset {
+    cursor: pointer;
+    width: 48%;
+    height: vw(40);
+    min-height: 30px;
+    border: 1px solid rgba($color: #000000, $alpha: 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    figure {
+      width: vw(21);
+      height: vw(20);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: vw(12);
+
+      img {
+        object-fit: contain;
+      }
+    }
+
+    div {
+      font-size: vw(14);
+      color: #333333;
+    }
+
+  }
+
+  // div.reset {
+  //   background: #fff;
+  //   border: 1px solid rgba(0, 0, 0, 0.4);
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  //   cursor: pointer;
+
+  //   figure {
+  //     width: 24px;
+  //     height: 26px;
+  //     display: flex;
+  //     align-items: center;
+  //     justify-content: center;
+
+  //     img {
+  //       transform: scale(0.6);
+  //       object-fit: contain;
+  //     }
+  //   }
+  // }
+
+  .disabled {
+    opacity: 0.1;
+    pointer-events: none;
+  }
+}
+
+@include media(">maxW") {
+  .setting_box {
+    margin-top: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    div.confirm {
+      margin-right: 5px;
+      // width: calc(100% - 5px);
+      width: 48%;
+
+      button {
+        width: 100%;
+        height: vw(40);
+        min-height: 30px;
+        font-size: vw(14);
+      }
+    }
+
+    div.reset {
+      cursor: pointer;
+      width: 48%;
+      height: vw(40);
+      min-height: 30px;
+      border: 1px solid rgba($color: #000000, $alpha: 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      figure {
+        width: vw(21);
+        height: vw(20);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: vw(12);
+
+        img {
+          object-fit: contain;
+        }
+      }
+
+      div {
+        font-size: vw(14);
+        font-weight: 400;
+        color: #333333;
+      }
+
+    }
+
+    // div.reset {
+    //   figure {
+    //     width: 28px;
+    //     height: 30px;
+
+    //     img {
+    //       transform: scale(0.6);
+    //       object-fit: contain;
+    //     }
+    //   }
+    // }
+  }
+}
+
+.range_value_active {
+  border: 1px solid #000000 !important;
+}

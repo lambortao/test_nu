@@ -1,0 +1,346 @@
+
+.swiper-img {
+  width: mvw(375);
+  height: mvw(375);
+  overflow: hidden;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-detai{
+  padding-bottom: mvw(110);
+}
+.detail-content {
+  padding: mvw(24) mvw(16) 0;
+  header {
+    h1 {
+      font-size: mrem(40);
+      line-height: 1.4;
+      margin: 0 0 mvw(10);
+    }
+    p {
+      color: #555;
+      font-size: mrem(26);
+    }
+    p.price {
+      font-size: mrem(32);
+      margin-top: mvw(24);
+      color: #333;
+    }
+    .warranty-box {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: mvw(16) 0 mvw(24);
+
+      p.warranty {
+        margin-left: mvw(15);
+        height: mvw(24);
+        line-height: mvw(24);
+        padding: 0 mvw(10) 0 mvw(20);
+        border-radius: mvw(4);
+        background-color: #FFF9E1;
+        color: #B16231;
+        position: relative;
+        margin-right: mvw(8);
+
+        &::before {
+          content: '';
+          width: mvw(24);
+          height: mvw(20);
+          position: absolute;
+          top: mvw(2);
+          left: mvw(-12);
+          background: {
+            image: url('~/assets/images/AAmobile/product/warranty.png');
+            size: 100% 100%;
+          };
+        }
+      }
+      p.standard {
+        border-radius: mvw(4);
+        height: mvw(24);
+        padding: 0 mvw(8);
+        line-height: mvw(24);
+        background-color: #f6f6f6;
+      }
+    }
+    .delivery {
+      margin-top: mvw(24);
+      display: flex;
+      justify-content: flex-start;
+      height: mvw(56);
+      background-color: #f6f6f6;
+
+      figure {
+        width: mvw(48);
+        height: mvw(24);
+        margin: mvw(16) 0;
+        text-align: center;
+        border-right: 1px solid #eee;
+
+        img {
+          width: mvw(24);
+          height: mvw(24);
+        }
+      }
+      div {
+        padding-left: mvw(16);
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        color: #555;
+      }
+    }
+  }
+  .standard-list {
+    margin: mvw(24) 0;
+    ul {
+      list-style-type: none;
+      margin: 0;
+      li {
+        margin-bottom: mvw(16);
+        display: flex;
+
+        &:last-child {
+          margin: 0;
+        }
+        p {
+          display: inline-block;
+          font-size: mrem(26);
+          word-wrap: break-word;
+          &:first-child {
+            color: #999;
+            width: mvw(80);
+          }
+          &:last-child {
+            flex: 1;
+          }
+        }
+      }
+    }
+  }
+  article {
+    padding: 0 0 mvw(24);
+    line-height: 1.7;
+    > div {
+      padding-top:0;
+      p {
+        color: #555;
+        line-height: 1.75em;
+        font-size: mrem(26);
+      }
+      img {
+        margin: mvw(24) 0;
+      }
+    }
+  }
+}
+
+.product-nav {
+  padding: mvw(20) mvw(16) 0;
+  display: flex;
+  justify-content: flex-start;
+  .product-nav-spu {
+    margin-right: mvw(16);
+    >figure {
+      border: 2px solid rgba(0,0,0,0);
+      &.active{
+        border: 2px solid #000;
+      }
+    }
+  }
+  .product-nav-sku {
+    padding: 0 0 0 mvw(16);
+    width: 70.2vw;
+    overflow: hidden;
+    overflow-x: auto;
+  }
+  .product-nav-sku-list {
+    display: flex;
+    justify-content: flex-start;
+    figure {
+      margin-right: 2vw;
+      border: 2px solid rgba(0,0,0,0);
+      &.active{
+        border: 2px solid #000;
+      }
+    }
+  }
+  figure, div.more {
+    width: 17vw;
+    height: 17vw;
+
+    &.active {
+      border: mvw(2) solid #000;
+    }
+  }
+  div.more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f6f6f6;
+    color: #999;
+    text-align: center;
+    font-size: mrem(24);
+  }
+  i.vertical-box {
+    display: block;
+    width: mvw(1);
+    height: mvw(64);
+    background: {
+      image: url('~/assets/images/AAmobile/product/line.png');
+      size: 100%;
+    };
+  }
+}
+
+h3 {
+  font-size: mrem(36);
+  margin-bottom: mvw(10);
+}
+.commend {
+  padding: 0 mvw(16);
+  div.commend-list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .commend-detail {
+    width: mvw(168);
+    margin-bottom: mvw(24);
+
+    figure {
+      width: mvw(168);
+      height: mvw(168);
+    }
+    .commend-content-title {
+      margin: mvw(16) 0 mvw(5);
+      display: flex;
+      p {
+        width: 100%;
+        color: #555;
+        font-size: mrem(26);
+        line-height: 1.5;
+      }
+    }
+    small {
+      display: block;
+      color: #999;
+      font-size: mrem(24);
+    }
+  }
+}
+.popup-product {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-bottom: mvw(20);
+
+  .popup-product-singin {
+    width: mvw(163);
+    margin-bottom: mvw(24);
+
+    figure {
+      width: mvw(163);
+      height: mvw(163);
+      border-radius: mvw(5);
+      overflow: hidden;
+    }
+    p {
+      color: #555;
+      margin-top: mvw(16);
+      font-size: mrem(22);
+    }
+  }
+}
+.popup-buy {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  padding: 0 mvw(40);
+  i {
+    width: 100%;
+    height: mvw(1);
+    background-color: #eee;
+    margin: mvw(40) 0;
+  }
+  > div {
+    width: 100%;
+
+    small, a {
+      display: block;
+    }
+
+    a {
+      height: mvw(48);
+      background-color: #000;
+      text-align: center;
+      line-height: mvw(48);
+      color: #fff;
+      font-size: mrem(28);
+      margin-top: mvw(24);
+    }
+  }
+}
+.fixed-button {
+  position: fixed;
+  width: 100%;
+  height: mvw(110);
+  bottom: 0;
+  left: 0;
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+  display: flex;
+  padding: 0 mvw(24) mvw(16);
+  flex-direction: column;
+  justify-content: flex-end;
+
+  .footer-control {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: mvw(16);
+    font-size: mrem(24);
+
+    > p {
+      font-size: mrem(28);
+      span {
+        font-size: mrem(24);
+        color: #555;
+      }
+    }
+    .favorite {
+      display: flex;
+      justify-content: flex-end;
+      img {
+        width: mvw(16);
+        height: mvw(16);
+        margin-right: mvw(8);
+      }
+    }
+  }
+  > p {
+    text-align: center;
+    line-height: mvw(48);
+    &:first-child {
+      img {
+        vertical-align: sub;
+        width: mvw(16);
+        margin-right: mvw(8);
+        transform: translateY(mvw(-1));
+      }
+    }
+    &:last-child {
+      background-color: #000;
+      grid-column: 2;
+      color: #fff;
+    }
+  }
+}

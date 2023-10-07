@@ -1,0 +1,66 @@
+
+
+.mobile-login {
+  padding: 0 mvw(24);
+  // background: {
+  //   image: url('@/assets/images/login/login-bg.png');
+  //   size: cover;
+  //   position: center;
+  // }
+
+  figure.header {
+    width: mvw(200);
+    margin: mvw(40) auto mvw(30);
+
+    img {
+      width: 100%;
+    }
+  }
+  .login-box {
+    span {
+      display: block;
+      margin-bottom: mvw(15);
+    }
+  }
+
+  .login-header-en {
+    color: #000;
+    padding: 0 mvw(10);
+    span {
+      font-weight: bold;
+    }
+    a,.back{
+      // color: #fff;
+      font-weight: normal;
+      text-decoration: underline;
+    }
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .other-login-methods {
+    p {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      color: rgba($color: #000, $alpha: 0.6);
+
+      &::after, &::before {
+        content: '';
+        height: mvw(1);
+        display: block;
+        background-color: rgba($color: #000, $alpha: 0.2);
+        width: mvw(110);
+      }
+    }
+    figure {
+      width: mvw(40);
+      height: mvw(40);
+      margin: mvw(16) auto 0;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

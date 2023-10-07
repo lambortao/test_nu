@@ -1,0 +1,19 @@
+@use "sass:math";
+$mobile_vw_base: 375;
+$mobile_rem_fontSize: 30;
+
+
+// @function vw($px) {
+//   @return math.div($px, $mobile_vw_base) * 100vw;
+// }
+
+@function mvw($px) {
+  @return math.div($px, $mobile_vw_base) * 100vw;
+}
+
+// @function rem($px) {
+//   @return math.div($px, $mobile_rem_fontSize) * 1rem;
+// }
+@function mrem($px) {
+  @return math.div($px, $mobile_rem_fontSize) * 1rem;
+}
